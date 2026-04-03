@@ -1,6 +1,6 @@
 # Purko
 
-> Purko is a Kubernetes-native AI agent orchestration platform. It lets SRE and platform engineering teams declare intelligent agents as Kubernetes Custom Resource Definitions (CRDs) that triage incidents, automate toil, and evolve from supervised to fully autonomous operation.
+> Purko is a Kubernetes-native AI agent orchestration platform. It lets SRE and platform engineering teams declare intelligent agents as Kubernetes Custom Resource Definitions (CRDs) that triage incidents, automate toil, and evolve from supervised to fully autonomous operation. The framework extends beyond SRE to cover the full software development lifecycle — from planning and code generation through automated review, testing, deployment, and monitoring.
 
 ## Core Concepts
 
@@ -18,6 +18,19 @@
 - **Capacity Planning**: Forecasts resource exhaustion and recommends scaling actions with cost impact analysis.
 - **Toil Reduction**: Automates cert rotation, node drains, config rollbacks, and scaling triggers.
 - **Postmortem Generation**: Auto-generates incident postmortems from alert timelines, agent actions, and resolution steps.
+
+## Full SDLC Coverage
+
+The six agent archetypes map to every stage of the software development lifecycle:
+
+- **Plan** → planner agent: Decomposes requirements into actionable tasks with dependencies
+- **Code** → executor agent: Generates and modifies code following best practices
+- **Review** → reviewer agent: Evaluates changes for correctness, security, and quality
+- **Test & Build** → executor agent: Runs test suites and builds artifacts
+- **Deploy** → router agent: Routes deployments based on risk scoring and environment
+- **Monitor** → monitor agent: Watches production health and feeds back into the cycle
+
+SDLC agents use the same CRDs, DAG workflows, and Shu-Ha-Ri trust model as SRE agents. An AgentWorkflow CRD can define a complete code-development pipeline (plan → implement → review) that runs in the same cluster as incident response workflows.
 
 ## Technical Details
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purko — Kubernetes-Native AI Agent Orchestration for SRE Teams</title>
     <meta name="description" content="Declare intelligent AI agents as Kubernetes CRDs. Purko automates incident triage, reduces toil, and evolves agents from supervised to autonomous using the Shu-Ha-Ri model. Open-source core, Apache 2.0.">
-    <meta name="keywords" content="kubernetes ai agents, sre automation, agent orchestration, kubernetes crd, incident triage, self-healing infrastructure, mcp connectors, agentic ai, platform engineering, devops automation">
+    <meta name="keywords" content="kubernetes ai agents, sre automation, agent orchestration, kubernetes crd, incident triage, self-healing infrastructure, mcp connectors, agentic ai, platform engineering, devops automation, sdlc automation, ai code review, ci cd agents, software development lifecycle, automated testing agents">
     <meta name="author" content="Gorgi Georgievski">
     <meta property="og:title" content="Purko — Kubernetes-Native AI Agent Orchestration for SRE Teams">
     <meta property="og:description" content="Declare intelligent AI agents as Kubernetes CRDs. Automate incident triage, reduce toil, and evolve agents from supervised to autonomous.">
@@ -29,7 +29,7 @@
         "url": "https://purko.io",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Kubernetes",
-        "description": "Purko is a Kubernetes-native AI agent orchestration platform. It lets SRE and platform engineering teams declare intelligent agents as Custom Resource Definitions (CRDs) that triage incidents, automate toil, and evolve from supervised to fully autonomous operation using the Shu-Ha-Ri graduated autonomy model.",
+        "description": "Purko is a Kubernetes-native AI agent orchestration platform. It lets SRE and platform engineering teams declare intelligent agents as Custom Resource Definitions (CRDs) that triage incidents, automate toil, and evolve from supervised to fully autonomous operation using the Shu-Ha-Ri graduated autonomy model. The framework extends beyond SRE to cover the full software development lifecycle — planning, code generation, automated code review, testing, deployment, and monitoring — using the same CRDs and DAG workflows.",
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Open-source Community Edition, Apache 2.0"},
         "founder": {"@type": "Person", "name": "Gorgi Georgievski", "url": "https://georgievski.one"}
     }
@@ -58,6 +58,11 @@
                 "@type": "Question",
                 "name": "Is Purko open source?",
                 "acceptedAnswer": {"@type": "Answer", "text": "Yes. Purko's core engine, CRDs, CLI (akctl), and 8 base agents are licensed under Apache 2.0 — fully open source with no restrictions. Enterprise features (multi-cluster, advanced RBAC, audit logging, HA) use Business Source License (BSL 1.1) which converts to Apache 2.0 after 36 months."}
+            },
+            {
+                "@type": "Question",
+                "name": "Can Purko be used for the full software development lifecycle?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes. Purko's six agent archetypes — planner, executor, reviewer, router, monitor, and retriever — map to every SDLC stage. You can define AgentWorkflow CRDs that orchestrate code planning, implementation, automated code review, testing, deployment, and monitoring as a single DAG pipeline. The same Shu-Ha-Ri trust model governs SDLC agents, so a code reviewer agent can graduate from suggesting changes to auto-approving low-risk PRs."}
             },
             {
                 "@type": "Question",
@@ -772,6 +777,71 @@
         .tag-shu { background: var(--accent-amber-dim); color: var(--accent-amber); border: 1px solid rgba(245,158,11,0.25); }
         .tag-ri { background: var(--accent-green-dim); color: var(--accent-green); border: 1px solid rgba(16,185,129,0.25); }
 
+        /* ───── SDLC ───── */
+        .sdlc { padding: var(--section-py) 0; }
+        .sdlc-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+            margin-bottom: 48px;
+        }
+        @media (max-width: 900px) { .sdlc-intro { grid-template-columns: 1fr; gap: 32px; } }
+        .sdlc-intro p { font-size: 0.95rem; line-height: 1.7; }
+        .sdlc-intro p strong { color: var(--text-primary); }
+
+        .sdlc-pipeline {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .sdlc-pipeline { flex-direction: column; }
+            .sdlc-arrow { transform: rotate(90deg); }
+        }
+        .sdlc-stage {
+            flex: 1;
+            min-width: 130px;
+            padding: 20px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-align: center;
+            transition: border-color var(--transition);
+        }
+        .sdlc-stage:hover { border-color: var(--accent-indigo); }
+        .sdlc-stage-icon {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .sdlc-stage h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .sdlc-stage span {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+        .sdlc-arrow {
+            font-size: 1rem;
+            color: var(--bg-tertiary);
+            padding: 0 6px;
+            flex-shrink: 0;
+        }
+
+        .sdlc-yaml-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) { .sdlc-yaml-grid { grid-template-columns: 1fr; } }
+        .sdlc-yaml-grid .code-block { font-size: 0.85rem; }
+
         /* ───── INTEGRATIONS ───── */
         .integrations { padding: var(--section-py) 0; }
         .intg-grid {
@@ -950,6 +1020,7 @@
                 <li><a href="#solution">Solution</a></li>
                 <li><a href="#shuhari">Autonomy</a></li>
                 <li><a href="#agents">Agents</a></li>
+                <li><a href="#sdlc">SDLC</a></li>
                 <li><a href="#integrations">Integrations</a></li>
                 <li><a href="#waitlist" class="nav-cta">Join Waitlist</a></li>
             </ul>
@@ -1251,6 +1322,120 @@
                         <h3>Postmortem Generation</h3>
                         <p>Auto-generates incident postmortems from alert timelines, agent actions, and resolution steps. Exports to Confluence or Notion.</p>
                         <span class="agent-tag tag-ri">ri</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ BEYOND SRE ═══ -->
+        <section class="sdlc" id="sdlc" aria-label="Full SDLC Coverage">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-label">Beyond SRE</p>
+                    <h2 class="section-title">One Framework. <span class="gradient-text">The Entire SDLC.</span></h2>
+                </div>
+                <div class="sdlc-intro">
+                    <div class="reveal">
+                        <p>Purko's agent archetypes &mdash; <strong>planner</strong>, <strong>executor</strong>, <strong>reviewer</strong>, <strong>router</strong>, <strong>monitor</strong>, and <strong>retriever</strong> &mdash; aren't limited to SRE. They map directly to every stage of the software development lifecycle.</p>
+                        <p style="margin-top:14px;">The same CRDs, the same DAG workflows, the same Shu-Ha-Ri trust model. Define a code-development pipeline as an <code style="font-family:var(--font-mono);font-size:0.82em;background:var(--bg-secondary);padding:2px 6px;border-radius:4px;color:var(--accent-indigo);">AgentWorkflow</code> and Kubernetes orchestrates it &mdash; from requirements through production.</p>
+                    </div>
+                    <div class="reveal reveal-d2">
+                        <p><strong>Extend in minutes, not months.</strong> Each agent is a CRD with a system prompt, model config, and tool bindings. Need a security scanner agent? A docs generator? A migration planner? Define the spec, apply it, done.</p>
+                        <p style="margin-top:14px;">The framework is designed for CI/CD optimization, automated code review, dependency audits, release management, and compliance checks &mdash; all orchestrated alongside SRE agents in the same cluster.</p>
+                    </div>
+                </div>
+
+                <div class="sdlc-pipeline reveal">
+                    <div class="sdlc-stage">
+                        <div class="sdlc-stage-icon">&#9635;</div>
+                        <h4>Plan</h4>
+                        <span>planner agent</span>
+                    </div>
+                    <div class="sdlc-arrow">&#8594;</div>
+                    <div class="sdlc-stage">
+                        <div class="sdlc-stage-icon">&#9998;</div>
+                        <h4>Code</h4>
+                        <span>executor agent</span>
+                    </div>
+                    <div class="sdlc-arrow">&#8594;</div>
+                    <div class="sdlc-stage">
+                        <div class="sdlc-stage-icon">&#9678;</div>
+                        <h4>Review</h4>
+                        <span>reviewer agent</span>
+                    </div>
+                    <div class="sdlc-arrow">&#8594;</div>
+                    <div class="sdlc-stage">
+                        <div class="sdlc-stage-icon">&#9881;</div>
+                        <h4>Test &amp; Build</h4>
+                        <span>executor agent</span>
+                    </div>
+                    <div class="sdlc-arrow">&#8594;</div>
+                    <div class="sdlc-stage">
+                        <div class="sdlc-stage-icon">&#9654;</div>
+                        <h4>Deploy</h4>
+                        <span>router agent</span>
+                    </div>
+                    <div class="sdlc-arrow">&#8594;</div>
+                    <div class="sdlc-stage">
+                        <div class="sdlc-stage-icon">&#9670;</div>
+                        <h4>Monitor</h4>
+                        <span>monitor agent</span>
+                    </div>
+                </div>
+
+                <div class="sdlc-yaml-grid">
+                    <div class="code-block reveal">
+                        <div class="code-header">
+                            <div class="code-dots"><i></i><i></i><i></i></div>
+                            <span>workflow-dev-pipeline.yaml</span>
+                        </div>
+                        <div class="code-body">
+                            <pre><span class="yk">apiVersion:</span> <span class="yv">agentic.io/v1alpha1</span>
+<span class="yk">kind:</span> <span class="yv">AgentWorkflow</span>
+<span class="yk">metadata:</span>
+  <span class="yk">name:</span> <span class="yv">code-development-pipeline</span>
+<span class="yk">spec:</span>
+  <span class="yk">timeout:</span> <span class="yv">"45m"</span>
+  <span class="yk">onFailure:</span> <span class="yv">stop</span>
+  <span class="yk">steps:</span>
+    - <span class="yk">name:</span> <span class="yv">plan</span>
+      <span class="yk">agentRef:</span>
+        <span class="yk">name:</span> <span class="yv">project-planner</span>
+    - <span class="yk">name:</span> <span class="yv">implement</span>
+      <span class="yk">agentRef:</span>
+        <span class="yk">name:</span> <span class="yv">code-executor</span>
+      <span class="yk">dependsOn:</span> [<span class="yv">plan</span>]
+    - <span class="yk">name:</span> <span class="yv">review</span>
+      <span class="yk">agentRef:</span>
+        <span class="yk">name:</span> <span class="yv">code-reviewer</span>
+      <span class="yk">dependsOn:</span> [<span class="yv">implement</span>]</pre>
+                        </div>
+                    </div>
+                    <div class="code-block reveal reveal-d2">
+                        <div class="code-header">
+                            <div class="code-dots"><i></i><i></i><i></i></div>
+                            <span>agent-code-reviewer.yaml</span>
+                        </div>
+                        <div class="code-body">
+                            <pre><span class="yk">apiVersion:</span> <span class="yv">agentic.io/v1alpha1</span>
+<span class="yk">kind:</span> <span class="yv">Agent</span>
+<span class="yk">metadata:</span>
+  <span class="yk">name:</span> <span class="yv">code-reviewer</span>
+<span class="yk">spec:</span>
+  <span class="yk">type:</span> <span class="yv">reviewer</span>
+  <span class="yk">model:</span>
+    <span class="yk">name:</span> <span class="yv">claude-sonnet-4-20250514</span>
+    <span class="yk">provider:</span> <span class="yv">anthropic</span>
+    <span class="yk">temperature:</span> <span class="yn">0.1</span>
+  <span class="yk">tools:</span>
+    - <span class="yk">name:</span> <span class="yv">static-analysis</span>
+      <span class="yk">type:</span> <span class="yv">builtin</span>
+    - <span class="yk">name:</span> <span class="yv">vulnerability-scan</span>
+      <span class="yk">type:</span> <span class="yv">api</span>
+  <span class="yk">guardrails:</span>
+    <span class="yk">maxIterations:</span> <span class="yn">5</span>
+    <span class="yk">costLimitUSD:</span> <span class="yn">3.0</span></pre>
+                        </div>
                     </div>
                 </div>
             </div>
