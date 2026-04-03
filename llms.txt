@@ -1,0 +1,35 @@
+# Purko
+
+> Purko is a Kubernetes-native AI agent orchestration platform. It lets SRE and platform engineering teams declare intelligent agents as Kubernetes Custom Resource Definitions (CRDs) that triage incidents, automate toil, and evolve from supervised to fully autonomous operation.
+
+## Core Concepts
+
+- **Agent CRD**: Declare AI agents as Kubernetes resources (`apiVersion: agentic.io/v1alpha1, kind: Agent`). Deploy with `kubectl apply`, manage with GitOps, govern with RBAC.
+- **Shu-Ha-Ri Autonomy Model**: Agents graduate through three trust levels — Shu (Follow: human-gated), Ha (Adapt: semi-autonomous), Ri (Transcend: fully autonomous). Promotion is earned through measurable reliability (success rate, action count, time at level).
+- **MCP Connectors**: Model Context Protocol connectors unify existing tools (PagerDuty, Slack, Prometheus, Datadog, Jira, GitHub, Grafana, Splunk, ServiceNow) into a single agent context.
+- **DAG Workflows**: AgentWorkflow CRD orchestrates multi-agent operations with fan-out/fan-in, conditional branching, retry policies, and cross-agent data passing.
+- **Guardrails**: Per-agent safety constraints — maxActionsPerMinute, requireApproval, maxBlastRadius, rollbackOnFailure, costLimitUSD.
+
+## Pre-Built Agents
+
+- **Incident Triage**: Correlates Kubernetes events, pod logs, and metrics to produce root-cause hypotheses within 90 seconds.
+- **Anomaly Detection**: Detects anomalous log patterns using statistical analysis and flags emerging issues before they page.
+- **Automated Remediation**: Handles CrashLoopBackOff, OOMKill, cert expiry, quota exhaustion with policy-gated execution.
+- **Capacity Planning**: Forecasts resource exhaustion and recommends scaling actions with cost impact analysis.
+- **Toil Reduction**: Automates cert rotation, node drains, config rollbacks, and scaling triggers.
+- **Postmortem Generation**: Auto-generates incident postmortems from alert timelines, agent actions, and resolution steps.
+
+## Technical Details
+
+- **API Group**: agentic.io/v1alpha1
+- **CRD Kinds**: Agent, AgentWorkflow
+- **Agent Types**: planner, executor, reviewer, router, monitor, retriever
+- **Deployment**: Helm chart + CRDs, GitOps-compatible (ArgoCD, Flux)
+- **LLM Support**: Anthropic Claude, OpenAI GPT-4, Google Gemini, local models (Ollama, vLLM)
+- **License**: Open-source core (Apache 2.0), enterprise features (BSL 1.1, converts to Apache 2.0 after 36 months)
+
+## Links
+
+- Website: https://purko.io
+- GitHub: https://github.com/geored/purko-landing
+- Author: Gorgi Georgievski (https://georgievski.one)
