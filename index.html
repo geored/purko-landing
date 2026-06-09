@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purko — Kubernetes-Native AI Agent Orchestration for SRE Teams</title>
-    <meta name="description" content="Declare intelligent AI agents as Kubernetes CRDs. Purko automates incident triage, reduces toil, and evolves agents from supervised to autonomous using the Shu-Ha-Ri model. Open-source core, Apache 2.0.">
+    <title>Purko — Open Source Kubernetes-Native AI Agent Platform</title>
+    <meta name="description" content="Purko is an open source platform for building AI agent teams. Declare agents as Kubernetes CRDs, wire them into DAG workflows, connect to any LLM provider. Apache 2.0.">
     <meta name="keywords" content="kubernetes ai agents, sre automation, agent orchestration, kubernetes crd, incident triage, self-healing infrastructure, mcp connectors, agentic ai, platform engineering, devops automation, sdlc automation, ai code review, ci cd agents, software development lifecycle, automated testing agents">
     <meta name="author" content="Gorgi Georgievski">
-    <meta property="og:title" content="Purko — Kubernetes-Native AI Agent Orchestration for SRE Teams">
+    <meta property="og:title" content="Purko — Open Source Kubernetes-Native AI Agent Platform">
     <meta property="og:description" content="Declare intelligent AI agents as Kubernetes CRDs. Automate incident triage, reduce toil, and evolve agents from supervised to autonomous.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://purko.io">
     <meta property="og:site_name" content="Purko">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Purko — Kubernetes-Native AI Agent Orchestration">
+    <meta name="twitter:title" content="Purko — Open Source Kubernetes-Native AI Agent Platform">
     <meta name="twitter:description" content="Declare intelligent AI agents as Kubernetes CRDs. Automate incident triage, reduce toil, evolve agents from supervised to autonomous.">
     <link rel="canonical" href="https://purko.io">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -29,7 +29,7 @@
         "url": "https://purko.io",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Kubernetes",
-        "description": "Purko is a Kubernetes-native AI agent orchestration platform. It lets SRE and platform engineering teams declare intelligent agents as Custom Resource Definitions (CRDs) that triage incidents, automate toil, and evolve from supervised to fully autonomous operation using the Shu-Ha-Ri graduated autonomy model. The framework extends beyond SRE to cover the full software development lifecycle — planning, code generation, automated code review, testing, deployment, and monitoring — using the same CRDs and DAG workflows.",
+        "description": "Purko is an open source, Kubernetes-native platform for building and operating AI agent teams. Declare agents as Kubernetes CRDs, wire them into DAG workflows, connect to any LLM provider. Used for marketing, legal, real estate, data analytics, video production, SDLC, and SRE automation.",
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Open-source Community Edition, Apache 2.0"},
         "founder": {"@type": "Person", "name": "Gorgi Georgievski", "url": "https://georgievski.one"}
     }
@@ -62,7 +62,7 @@
             {
                 "@type": "Question",
                 "name": "Can Purko be used for the full software development lifecycle?",
-                "acceptedAnswer": {"@type": "Answer", "text": "Yes. Purko's six agent archetypes — planner, executor, reviewer, router, monitor, and retriever — map to every SDLC stage. You can define AgentWorkflow CRDs that orchestrate code planning, implementation, automated code review, testing, deployment, and monitoring as a single DAG pipeline. The same Shu-Ha-Ri trust model governs SDLC agents, so a code reviewer agent can graduate from suggesting changes to auto-approving low-risk PRs."}
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes. Purko's six agent archetypes — planner, executor, reviewer, router, monitor, and retriever — map to every SDLC stage. You can define Workflow CRDs that orchestrate code planning, implementation, automated code review, testing, deployment, and monitoring as a single DAG pipeline. The same Shu-Ha-Ri trust model governs SDLC agents, so a code reviewer agent can graduate from suggesting changes to auto-approving low-risk PRs."}
             },
             {
                 "@type": "Question",
@@ -1022,7 +1022,8 @@
                 <li><a href="#agents">Agents</a></li>
                 <li><a href="#sdlc">SDLC</a></li>
                 <li><a href="#integrations">Integrations</a></li>
-                <li><a href="#waitlist" class="nav-cta">Join Waitlist</a></li>
+                <li><a href="https://purko-io.github.io/purko/">Docs</a></li>
+                <li><a href="https://github.com/purko-io/purko" class="nav-cta">GitHub</a></li>
             </ul>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">=== menu</button>
         </div>
@@ -1039,14 +1040,14 @@
                             <span class="hero-badge-dot"></span>
                             Open Source &middot; Apache 2.0 &middot; Kubernetes-Native
                         </div>
-                        <h1>AI Agents That <span class="gradient-text">Reason, Act, and Heal</span> Your Infrastructure</h1>
-                        <p class="hero-tagline">Declare intelligent agents as Kubernetes CRDs. They triage incidents, automate toil, and evolve from supervised to autonomous &mdash; so your SRE team ships reliability, not runbooks.</p>
+                        <h1>Build AI Agent Teams That <span class="gradient-text">Run Your Business Processes</span></h1>
+                        <p class="hero-tagline">Declare AI agents as Kubernetes CRDs, wire them into DAG workflows, and connect them to any LLM. From marketing campaigns to code reviews to contract analysis — Purko handles it.</p>
                         <div class="hero-cmd">
-                            <code>$ kubectl apply -f agent.yaml</code>
+                            <code>$ helm install purko oci://ghcr.io/purko-io/purko</code>
                         </div>
                         <div class="hero-actions">
-                            <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
-                            <a href="#solution" class="btn btn-secondary">View the Spec &#8594;</a>
+                            <a href="https://github.com/purko-io/purko" class="btn btn-primary">Get Started</a>
+                            <a href="https://purko-io.github.io/purko/" class="btn btn-secondary">Documentation &#8594;</a>
                         </div>
                     </div>
                     <div class="arch-container reveal">
@@ -1177,7 +1178,7 @@
                                 <span>agent-triage.yaml</span>
                             </div>
                             <div class="code-body">
-                                <pre><span class="yk">apiVersion:</span> <span class="yv">agentic.io/v1alpha1</span>
+                                <pre><span class="yk">apiVersion:</span> <span class="yv">purko.io/v1alpha1</span>
 <span class="yk">kind:</span> <span class="yv">Agent</span>
 <span class="yk">metadata:</span>
   <span class="yk">name:</span> <span class="yv">incident-triage-prod</span>
@@ -1337,7 +1338,7 @@
                 <div class="sdlc-intro">
                     <div class="reveal">
                         <p>Purko's agent archetypes &mdash; <strong>planner</strong>, <strong>executor</strong>, <strong>reviewer</strong>, <strong>router</strong>, <strong>monitor</strong>, and <strong>retriever</strong> &mdash; aren't limited to SRE. They map directly to every stage of the software development lifecycle.</p>
-                        <p style="margin-top:14px;">The same CRDs, the same DAG workflows, the same Shu-Ha-Ri trust model. Define a code-development pipeline as an <code style="font-family:var(--font-mono);font-size:0.82em;background:var(--bg-secondary);padding:2px 6px;border-radius:4px;color:var(--accent-indigo);">AgentWorkflow</code> and Kubernetes orchestrates it &mdash; from requirements through production.</p>
+                        <p style="margin-top:14px;">The same CRDs, the same DAG workflows, the same Shu-Ha-Ri trust model. Define a code-development pipeline as an <code style="font-family:var(--font-mono);font-size:0.82em;background:var(--bg-secondary);padding:2px 6px;border-radius:4px;color:var(--accent-indigo);">Workflow</code> and Kubernetes orchestrates it &mdash; from requirements through production.</p>
                     </div>
                     <div class="reveal reveal-d2">
                         <p><strong>Extend in minutes, not months.</strong> Each agent is a CRD with a system prompt, model config, and tool bindings. Need a security scanner agent? A docs generator? A migration planner? Define the spec, apply it, done.</p>
@@ -1390,8 +1391,8 @@
                             <span>workflow-dev-pipeline.yaml</span>
                         </div>
                         <div class="code-body">
-                            <pre><span class="yk">apiVersion:</span> <span class="yv">agentic.io/v1alpha1</span>
-<span class="yk">kind:</span> <span class="yv">AgentWorkflow</span>
+                            <pre><span class="yk">apiVersion:</span> <span class="yv">purko.io/v1alpha1</span>
+<span class="yk">kind:</span> <span class="yv">Workflow</span>
 <span class="yk">metadata:</span>
   <span class="yk">name:</span> <span class="yv">code-development-pipeline</span>
 <span class="yk">spec:</span>
@@ -1417,7 +1418,7 @@
                             <span>agent-code-reviewer.yaml</span>
                         </div>
                         <div class="code-body">
-                            <pre><span class="yk">apiVersion:</span> <span class="yv">agentic.io/v1alpha1</span>
+                            <pre><span class="yk">apiVersion:</span> <span class="yv">purko.io/v1alpha1</span>
 <span class="yk">kind:</span> <span class="yv">Agent</span>
 <span class="yk">metadata:</span>
   <span class="yk">name:</span> <span class="yv">code-reviewer</span>
@@ -1468,26 +1469,30 @@
         </section>
 
         <!-- ═══ CTA ═══ -->
-        <section class="cta-section" id="waitlist" aria-label="Early Access Waitlist">
-            <div class="cta-glow"></div>
-            <div class="container" style="position:relative;z-index:2;">
-                <div class="section-label" style="justify-content:center;">Early Access</div>
-                <h2 class="reveal">Ship Reliability, <span class="gradient-text">Not Runbooks</span></h2>
-                <p class="section-subtitle reveal">Purko is in early access. Join the waitlist to get notified when we launch.</p>
-                <form class="cta-form reveal" id="waitlistForm" action="https://formspree.io/f/xykbnywj" method="POST">
-                    <input type="email" name="email" class="cta-input" placeholder="you@company.com" required aria-label="Email address">
-                    <button type="submit" class="btn btn-primary" id="waitlistBtn">Join Waitlist</button>
-                </form>
-                <div class="cta-success" id="waitlistSuccess">Thanks for your interest! We'll be in touch when Purko launches.</div>
-                <div class="cta-meta reveal">
-                    <span>Open-source core</span>
-                    <span>&middot;</span>
-                    <span>Apache 2.0</span>
-                    <span>&middot;</span>
-                    <span>No vendor lock-in</span>
-                </div>
-            </div>
-        </section>
+        <section class="cta-section" id="getstarted" aria-label="Get Started">
+    <div class="cta-glow"></div>
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="section-label" style="justify-content:center;">Get Started</div>
+        <h2 class="reveal">Build Your AI Team <span class="gradient-text">In Minutes</span></h2>
+        <p class="section-subtitle reveal">Purko is open source and ready to use. Install with Helm, create your first agent, and run your first workflow.</p>
+        <div class="hero-cmd reveal" style="justify-content:center;margin-bottom:24px;">
+            <code>$ helm install purko oci://ghcr.io/purko-io/purko</code>
+        </div>
+        <div class="hero-actions reveal" style="justify-content:center;">
+            <a href="https://github.com/purko-io/purko" class="btn btn-primary">View on GitHub</a>
+            <a href="https://purko-io.github.io/purko/" class="btn btn-secondary">Read the Docs &#8594;</a>
+        </div>
+        <div class="cta-meta reveal">
+            <span>Open Source</span>
+            <span>&middot;</span>
+            <span>Apache 2.0</span>
+            <span>&middot;</span>
+            <span>26 CLI Commands</span>
+            <span>&middot;</span>
+            <span>34 Pre-Built Agents</span>
+        </div>
+    </div>
+</section>
 
     </main>
 
@@ -1498,8 +1503,8 @@
                 Purko
             </a>
             <div class="footer-links">
-                <a href="#waitlist">Join Waitlist</a>
-                <a href="#solution">Documentation</a>
+                <a href="https://github.com/purko-io/purko">GitHub</a>
+                <a href="https://purko-io.github.io/purko/">Documentation</a>
                 <a href="#agents">Agent Catalog</a>
             </div>
             <p class="footer-copy">&copy; 2025&ndash;2026 Gorgi Georgievski. All rights reserved.</p>
@@ -1547,26 +1552,6 @@
             });
         });
 
-        // Waitlist form (submits to Formspree, stays on page)
-        const form = document.getElementById('waitlistForm');
-        const success = document.getElementById('waitlistSuccess');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const input = form.querySelector('input[type="email"]');
-            if (!input.checkValidity() || !input.value) { input.reportValidity(); return; }
-            const data = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            }).then(r => {
-                form.style.display = 'none';
-                success.classList.add('show');
-            }).catch(() => {
-                form.style.display = 'none';
-                success.classList.add('show');
-            });
-        });
     });
     </script>
 </body>
